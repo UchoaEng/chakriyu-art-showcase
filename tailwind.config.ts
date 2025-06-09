@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -67,8 +66,10 @@ export default {
 				'portfolio-pink': '#F8BBD9',
 				'portfolio-purple': '#E4B1F0',
 				'portfolio-lavender': '#957DAD',
+				'portfolio-lavender-dark': '#735B8B',
 				'portfolio-sage': '#A8DADC',
-				'portfolio-cream': '#F1FAEE'
+				'portfolio-cream': '#F1FAEE',
+				'portfolio-gray': '#373737'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

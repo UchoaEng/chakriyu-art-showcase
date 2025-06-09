@@ -51,19 +51,20 @@ const HeroSection = () => {
 
           {/* Call to Actions */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={scrollToProjects}
-              className="bg-portfolio-lavender hover:bg-portfolio-lavender/90 dark:bg-portfolio-pink dark:hover:bg-portfolio-pink/90 text-white px-8 py-3 text-lg transition-colors"
-            >
-              Ver Portfólio
-            </Button>
-            <Button
-              variant="outline"
-              onClick={openWhatsApp}
-              className="border-portfolio-lavender text-portfolio-lavender hover:bg-portfolio-lavender hover:text-white dark:border-portfolio-pink dark:text-portfolio-pink dark:hover:bg-portfolio-pink dark:hover:text-white px-8 py-3 text-lg transition-colors"
+            <a
+              href="https://wa.me/5581987648229?text=Olá! Vi seu portfólio e gostaria de conversar sobre um projeto."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-portfolio-lavender-dark hover:bg-portfolio-lavender-dark/90 dark:bg-portfolio-pink dark:hover:bg-portfolio-pink/90 text-white dark:text-portfolio-gray px-8 py-3 text-lg font-medium rounded-md transition-colors"
             >
               Entrar em Contato
-            </Button>
+            </a>
+            <button
+              onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="inline-flex items-center justify-center border-2 border-portfolio-lavender-dark text-portfolio-lavender-dark hover:bg-portfolio-lavender-dark hover:text-white dark:border-portfolio-pink dark:text-portfolio-pink dark:hover:bg-portfolio-pink dark:hover:text-portfolio-gray px-8 py-3 text-lg font-medium rounded-md transition-colors"
+            >
+              Ver Projetos
+            </button>
           </div>
 
           {/* Tags de habilidades */}

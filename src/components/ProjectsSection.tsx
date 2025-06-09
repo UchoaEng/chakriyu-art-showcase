@@ -179,11 +179,11 @@ const ProjectsSection = () => {
               <p className="text-lg mb-6 text-gray-700 dark:text-gray-200 transition-colors">
                 Vamos conversar sobre o seu próximo projeto
               </p>
-              <a 
+              <a
                 href="https://wa.me/5581987648229?text=Olá! Vi seu portfólio e gostaria de conversar sobre um projeto."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-white dark:bg-gray-800 text-portfolio-lavender dark:text-portfolio-pink px-8 py-3 rounded-full font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                className="inline-block bg-white dark:bg-gray-800 text-portfolio-lavender-dark dark:text-portfolio-pink border-2 border-portfolio-lavender-dark dark:border-portfolio-pink rounded-full px-8 py-4 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 hover:bg-portfolio-lavender-dark hover:text-white dark:hover:bg-portfolio-pink dark:hover:text-portfolio-gray transition-all duration-200"
               >
                 Entre em Contato
               </a>

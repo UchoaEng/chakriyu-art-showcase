@@ -110,7 +110,7 @@ const ContactSection = () => {
                   href="https://www.behance.net/chakriyu"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-portfolio-lavender dark:bg-portfolio-pink text-white rounded-full flex items-center justify-center hover:bg-portfolio-lavender/80 dark:hover:bg-portfolio-pink/80 transition-colors"
+                  className="w-10 h-10 bg-portfolio-lavender-dark dark:bg-portfolio-pink text-white dark:text-portfolio-gray rounded-full flex items-center justify-center hover:bg-portfolio-lavender-dark/80 dark:hover:bg-portfolio-pink/80 transition-colors"
                 >
                   <BehanceIcon size={16} />
                 </a>
@@ -118,7 +118,7 @@ const ContactSection = () => {
                   href="https://www.linkedin.com/in/rebecca-chakrian/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-portfolio-lavender dark:bg-portfolio-pink text-white rounded-full flex items-center justify-center hover:bg-portfolio-lavender/80 dark:hover:bg-portfolio-pink/80 transition-colors"
+                  className="w-10 h-10 bg-portfolio-lavender-dark dark:bg-portfolio-pink text-white dark:text-portfolio-gray rounded-full flex items-center justify-center hover:bg-portfolio-lavender-dark/80 dark:hover:bg-portfolio-pink/80 transition-colors"
                 >
                   <LinkedInIcon size={16} />
                 </a>
@@ -183,7 +183,7 @@ const ContactSection = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-portfolio-lavender hover:bg-portfolio-lavender/90 dark:bg-portfolio-pink dark:hover:bg-portfolio-pink/90 text-white py-3 text-lg transition-colors"
+                className="w-full bg-portfolio-lavender-dark hover:bg-portfolio-lavender-dark/90 dark:bg-portfolio-pink dark:hover:bg-portfolio-pink/90 text-white dark:text-portfolio-gray py-3 text-lg font-medium rounded-md transition-colors"
               >
                 Enviar Mensagem
               </Button>
