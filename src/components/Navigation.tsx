@@ -1,6 +1,6 @@
-
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,32 +21,34 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-portfolio-pink/20">
+    <nav className="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b border-portfolio-pink/20 dark:border-gray-700/50 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="text-2xl font-bold text-portfolio-lavender">
+          <div className="text-2xl font-bold text-portfolio-lavender dark:text-portfolio-pink">
             Rebecca Chakrian
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-portfolio-lavender transition-colors duration-200 font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-portfolio-lavender dark:hover:text-portfolio-pink transition-colors duration-200 font-medium"
               >
                 {item.name}
               </button>
             ))}
+            <ThemeToggle />
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and theme toggle */}
+          <div className="md:hidden flex items-center space-x-3">
+            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-portfolio-lavender transition-colors"
+              className="text-gray-700 dark:text-gray-300 hover:text-portfolio-lavender dark:hover:text-portfolio-pink transition-colors"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -61,7 +63,7 @@ const Navigation = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left py-2 text-gray-700 hover:text-portfolio-lavender transition-colors duration-200"
+                  className="text-left py-2 text-gray-700 dark:text-gray-300 hover:text-portfolio-lavender dark:hover:text-portfolio-pink transition-colors duration-200"
                 >
                   {item.name}
                 </button>

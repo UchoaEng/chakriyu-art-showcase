@@ -135,14 +135,14 @@ const ProjectsSection = () => {
 
   return (
     <>
-      <section id="projects" className="py-20 bg-portfolio-cream/30">
+      <section id="projects" className="py-20 bg-portfolio-cream/30 dark:bg-gray-800/30 transition-colors">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Cabeçalho */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6 transition-colors">
               Projetos
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors">
               Uma seleção dos meus trabalhos mais recentes em design gráfico, 
               ilustração e branding, demonstrando versatilidade e criatividade.
             </p>
@@ -153,7 +153,7 @@ const ProjectsSection = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 bg-white text-portfolio-lavender border border-portfolio-lavender rounded-full hover:bg-portfolio-lavender hover:text-white transition-all duration-200"
+                className="px-4 py-2 bg-white dark:bg-gray-700 text-portfolio-lavender dark:text-portfolio-pink border border-portfolio-lavender dark:border-portfolio-pink rounded-full hover:bg-portfolio-lavender hover:text-white dark:hover:bg-portfolio-pink dark:hover:text-white transition-all duration-200"
               >
                 {category}
               </button>
@@ -174,14 +174,19 @@ const ProjectsSection = () => {
 
           {/* Call to Action */}
           <div className="text-center mt-16">
-            <div className="bg-gradient-to-br from-portfolio-sage to-portfolio-purple p-8 rounded-2xl text-white">
-              <h3 className="text-2xl font-bold mb-4">Gostou do que viu?</h3>
-              <p className="text-lg mb-6 opacity-90">
+            <div className="bg-gradient-to-br from-portfolio-sage to-portfolio-purple dark:from-gray-700 dark:to-gray-600 p-8 rounded-2xl text-gray-800 dark:text-gray-100 transition-colors">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white transition-colors">Gostou do que viu?</h3>
+              <p className="text-lg mb-6 text-gray-700 dark:text-gray-200 transition-colors">
                 Vamos conversar sobre o seu próximo projeto
               </p>
-              <button className="bg-white text-portfolio-lavender px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+              <a 
+                href="https://wa.me/5581987648229?text=Olá! Vi seu portfólio e gostaria de conversar sobre um projeto."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white dark:bg-gray-800 text-portfolio-lavender dark:text-portfolio-pink px-8 py-3 rounded-full font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              >
                 Entre em Contato
-              </button>
+              </a>
             </div>
           </div>
         </div>

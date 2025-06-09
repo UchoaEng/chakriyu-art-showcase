@@ -17,19 +17,19 @@ const ProjectCard = ({ title, description, image, category, skills, onClick }: P
   return (
     <Card 
       onClick={onClick}
-      className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border-0 bg-white cursor-pointer"
+      className="group hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border-0 bg-white dark:bg-gray-800 cursor-pointer"
     >
       <div className="relative overflow-hidden h-64">
         {/* Loading skeleton */}
         {!isLoaded && !hasError && (
-          <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-portfolio-lavender"></div>
+          <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 animate-pulse flex items-center justify-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-portfolio-lavender dark:border-portfolio-pink"></div>
           </div>
         )}
         
         {/* Error state */}
         {hasError && (
-          <div className="absolute inset-0 bg-gray-100 flex items-center justify-center text-gray-500">
+          <div className="absolute inset-0 bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400">
             <div className="text-center">
               <div className="text-2xl mb-2">🖼️</div>
               <div className="text-sm">Imagem não encontrada</div>
@@ -53,17 +53,17 @@ const ProjectCard = ({ title, description, image, category, skills, onClick }: P
         )}
         
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-portfolio-pink/90 text-portfolio-lavender text-xs font-medium rounded-full">
+          <span className="px-3 py-1 bg-portfolio-pink/90 dark:bg-portfolio-pink/80 text-portfolio-lavender dark:text-white text-xs font-medium rounded-full">
             {category}
           </span>
         </div>
       </div>
       
       <CardContent className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-portfolio-lavender transition-colors">
+        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-portfolio-lavender dark:group-hover:text-portfolio-pink transition-colors">
           {title}
         </h3>
-        <p className="text-gray-600 mb-4 leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed transition-colors">
           {description}
         </p>
         
@@ -71,7 +71,7 @@ const ProjectCard = ({ title, description, image, category, skills, onClick }: P
           {skills.map((skill) => (
             <span
               key={skill}
-              className="px-2 py-1 bg-portfolio-sage/20 text-portfolio-lavender text-xs rounded"
+              className="px-2 py-1 bg-portfolio-sage/20 dark:bg-portfolio-sage/30 text-portfolio-lavender dark:text-portfolio-pink text-xs rounded transition-colors"
             >
               {skill}
             </span>
