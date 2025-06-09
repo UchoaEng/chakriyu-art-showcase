@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from '@/components/ui/card';
 
 interface ProjectCardProps {
@@ -7,11 +6,15 @@ interface ProjectCardProps {
   image: string;
   category: string;
   skills: string[];
+  onClick: () => void;
 }
 
-const ProjectCard = ({ title, description, image, category, skills }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, image, category, skills, onClick }: ProjectCardProps) => {
   return (
-    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border-0 bg-white">
+    <Card 
+      onClick={onClick}
+      className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border-0 bg-white cursor-pointer"
+    >
       <div className="relative overflow-hidden">
         <img
           src={image}

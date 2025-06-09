@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
@@ -24,7 +23,7 @@ const HeroSection = () => {
           <div className="mb-8">
             <div className="w-48 h-48 mx-auto bg-gradient-to-br from-portfolio-pink to-portfolio-purple rounded-full flex items-center justify-center animate-float">
               <img
-                src="https://images.unsplash.com/photo-1494790108755-2616b332c5cd?w=300&h=300&fit=crop&crop=face"
+                src="/Profile.jpg"
                 alt="Rebecca Chakrian"
                 className="w-40 h-40 rounded-full object-cover border-4 border-white shadow-lg"
               />

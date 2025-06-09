@@ -1,9 +1,9 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { BehanceIcon, LinkedInIcon } from './SocialIcons';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -94,7 +94,7 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-portfolio-lavender text-white rounded-full flex items-center justify-center hover:bg-portfolio-lavender/80 transition-colors"
                 >
-                  Be
+                  <BehanceIcon size={16} />
                 </a>
                 <a
                   href="https://www.linkedin.com"
@@ -102,7 +102,7 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-portfolio-lavender text-white rounded-full flex items-center justify-center hover:bg-portfolio-lavender/80 transition-colors"
                 >
-                  Li
+                  <LinkedInIcon size={16} />
                 </a>
               </div>
             </div>

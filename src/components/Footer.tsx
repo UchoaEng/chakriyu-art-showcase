@@ -1,3 +1,4 @@
+import { BehanceIcon, LinkedInIcon } from './SocialIcons';
 
 const Footer = () => {
   return (
@@ -46,17 +47,19 @@ const Footer = () => {
                   href="https://www.behance.net"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-portfolio-pink transition-colors"
+                  className="text-gray-300 hover:text-portfolio-pink transition-colors flex items-center space-x-2"
                 >
-                  Behance
+                  <BehanceIcon size={20} />
+                  <span>Behance</span>
                 </a>
                 <a
                   href="https://www.linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-portfolio-pink transition-colors"
+                  className="text-gray-300 hover:text-portfolio-pink transition-colors flex items-center space-x-2"
                 >
-                  LinkedIn
+                  <LinkedInIcon size={20} />
+                  <span>LinkedIn</span>
                 </a>
               </div>
             </div>
