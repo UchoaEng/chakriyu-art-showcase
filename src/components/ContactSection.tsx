@@ -89,7 +89,7 @@ const ContactSection = () => {
               <h3 className="font-semibold text-gray-800 mb-4">Conecte-se Comigo</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://www.behance.net"
+                  href="https://www.behance.net/chakriyu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-portfolio-lavender text-white rounded-full flex items-center justify-center hover:bg-portfolio-lavender/80 transition-colors"
@@ -97,7 +97,7 @@ const ContactSection = () => {
                   <BehanceIcon size={16} />
                 </a>
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/in/rebecca-chakrian/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-portfolio-lavender text-white rounded-full flex items-center justify-center hover:bg-portfolio-lavender/80 transition-colors"

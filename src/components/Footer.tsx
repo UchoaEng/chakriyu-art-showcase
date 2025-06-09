@@ -44,7 +44,7 @@ const Footer = () => {
               <p>João Pessoa, PB - Brasil</p>
               <div className="flex space-x-4 mt-4">
                 <a
-                  href="https://www.behance.net"
+                  href="https://www.behance.net/chakriyu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-portfolio-pink transition-colors flex items-center space-x-2"
@@ -53,7 +53,7 @@ const Footer = () => {
                   <span>Behance</span>
                 </a>
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/in/rebecca-chakrian/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-portfolio-pink transition-colors flex items-center space-x-2"
