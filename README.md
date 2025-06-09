@@ -1,73 +1,139 @@
-# Welcome to your Lovable project
+# Portfolio Rebecca Chakrian
 
-## Project info
+Portfolio pessoal de Rebecca Chakrian, designer gráfica e ilustradora especializada em branding, identidade visual e arte digital.
 
-**URL**: https://lovable.dev/projects/3c964665-a72a-4666-a469-84930daf1558
+## 🚀 Tecnologias
 
-## How can I edit this code?
+- **React 18** + **TypeScript** - Interface moderna e type-safe
+- **Vite** - Bundler rápido para desenvolvimento
+- **Tailwind CSS** - Estilização utilitária
+- **Shadcn/ui** - Componentes de interface elegantes
+- **Vercel Speed Insights** - Métricas de performance
 
-There are several ways of editing your application.
+## ⚡ Otimizações de Performance
 
-**Use Lovable**
+### 🖼️ Sistema de Imagens Otimizado
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3c964665-a72a-4666-a469-84930daf1558) and start prompting.
+O projeto implementa um sistema avançado de otimização de carregamento de imagens:
 
-Changes made via Lovable will be committed automatically to this repo.
+#### **Lazy Loading Inteligente**
+- ✅ **Intersection Observer** para detectar quando cards estão visíveis
+- ✅ **Skeleton loading** com placeholders animados
+- ✅ **Lazy loading nativo** do HTML para imagens do carousel
+- ✅ **Eager loading** apenas para primeira imagem do modal
 
-**Use your preferred IDE**
+#### **Preload Inteligente**
+- ✅ **Sistema de prioridade** para carregamento ordenado
+- ✅ **Preload em lotes** (máx. 3 imagens paralelas)
+- ✅ **Preload contextual** baseado na posição do usuário
+- ✅ **Cache de imagens** para evitar recarregamentos
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+#### **Estados de Carregamento**
+- ✅ **Loading states** com spinners
+- ✅ **Error handling** com fallbacks visuais
+- ✅ **Transições suaves** entre estados
+- ✅ **Timeout protection** (10s limite)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+#### **Navegação Otimizada**
+- ✅ **Preload de imagens próximas** no carousel
+- ✅ **Indicadores visuais** de posição
+- ✅ **API do carousel** para controle preciso
 
-Follow these steps:
+### 📊 Métricas de Performance
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+O projeto coleta automaticamente:
+- **Core Web Vitals** (LCP, FID, CLS)
+- **First Contentful Paint** (FCP)
+- **Time to Interactive** (TTI)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🏗️ Estrutura do Projeto
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/           # Componentes React
+│   ├── ui/              # Componentes base do shadcn/ui
+│   ├── ProjectCard.tsx  # Card de projeto com lazy loading
+│   ├── ProjectModal.tsx # Modal com carousel otimizado
+│   └── ProjectsSection.tsx # Seção principal com Intersection Observer
+├── data/
+│   └── projects.ts      # Dados dos projetos
+├── utils/
+│   └── imagePreloader.ts # Sistema de preload inteligente
+└── main.tsx            # Ponto de entrada com Speed Insights
 ```
 
-**Edit a file directly in GitHub**
+## 🖼️ Estrutura de Imagens
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+public/projects/
+├── [Nome do Projeto]/
+│   ├── tbm.png         # Thumbnail (usado nos cards)
+│   ├── 1.png          # Primeira imagem do carousel
+│   ├── 2.png          # Segunda imagem...
+│   └── N.png          # Última imagem
+```
 
-**Use GitHub Codespaces**
+## 🔧 Scripts Disponíveis
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run dev          # Modo desenvolvimento
+npm run build        # Build para produção
+npm run preview      # Preview da build
+npm run lint         # Análise de código
+```
 
-## What technologies are used for this project?
+## 📱 Responsividade
 
-This project is built with:
+- ✅ **Mobile First** - Design otimizado para mobile
+- ✅ **Breakpoints consistentes** - sm, md, lg, xl
+- ✅ **Imagens adaptativas** - Tamanhos ajustados por tela
+- ✅ **Touch-friendly** - Interações otimizadas para touch
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎨 Design System
 
-## How can I deploy this project?
+### Cores
+- **Portfolio Pink**: Rosa suave para destaques
+- **Portfolio Lavender**: Roxo elegante para textos importantes  
+- **Portfolio Sage**: Verde sálvia para elementos naturais
+- **Portfolio Purple**: Roxo vibrante para gradientes
+- **Portfolio Cream**: Creme suave para backgrounds
 
-Simply open [Lovable](https://lovable.dev/projects/3c964665-a72a-4666-a469-84930daf1558) and click on Share -> Publish.
+### Tipografia
+- **Headings**: Font weight bold, escalas responsivas
+- **Body**: Font weight normal, line-height otimizada
+- **Labels**: Font weight medium, tamanhos pequenos
 
-## Can I connect a custom domain to my Lovable project?
+## 🚀 Deploy
 
-Yes, you can!
+O projeto está configurado para deploy automático na Vercel:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. **Build automático** com `npm run build`
+2. **Output directory**: `dist/`
+3. **Framework detection**: Vite
+4. **Métricas habilitadas** automaticamente
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📈 Melhorias de Performance Implementadas
+
+### Antes
+- ❌ Imagens grandes (até 42MB) carregando todas de uma vez
+- ❌ Sem lazy loading
+- ❌ Carregamento sequencial
+- ❌ Sem feedback visual durante carregamento
+
+### Depois
+- ✅ Lazy loading inteligente com Intersection Observer
+- ✅ Preload prioritário com sistema de filas
+- ✅ Estados de carregamento visuais
+- ✅ Carregamento paralelo otimizado (3 imagens max)
+- ✅ Error handling robusto
+- ✅ Cache de imagens para melhor UX
+
+### Resultados Esperados
+- 📈 **LCP melhorado** - Primeira imagem carrega mais rápido
+- 📈 **Menor uso de banda** - Só carrega imagens visíveis
+- 📈 **UX aprimorada** - Feedback visual constante
+- 📈 **Performance mobile** - Carregamento adaptativo
+
+---
+
+**Desenvolvido com ❤️ por Rebecca Chakrian**
