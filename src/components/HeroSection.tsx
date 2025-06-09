@@ -16,7 +16,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-portfolio-cream via-white to-portfolio-pink/20">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-portfolio-cream via-white to-portfolio-pink/20 pt-20 md:pt-0">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           {/* Ilustração/Avatar */}
