@@ -2,6 +2,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useState, useEffect } from "react";
 import { ImagePreloader } from "@/utils/imagePreloader";
+import { OptimizedImage } from "./OptimizedImage";
 import type { CarouselApi } from "@/components/ui/carousel";
 
 interface ProjectModalProps {
@@ -14,51 +15,6 @@ interface ProjectModalProps {
     skills: string[];
   } | null;
 }
-
-// Componente otimizado para imagens
-const OptimizedImage = ({ 
-  src, 
-  alt, 
-  className, 
-  onClick, 
-  isFirstImage = false 
-}: { 
-  src: string; 
-  alt: string; 
-  className?: string; 
-  onClick?: () => void; 
-  isFirstImage?: boolean;
-}) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
-
-  return (
-    <div className="relative flex justify-center items-center min-h-[300px]">
-      {!isLoaded && !hasError && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-portfolio-lavender"></div>
-        </div>
-      )}
-      
-      {hasError ? (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500">
-          Erro ao carregar imagem
-        </div>
-      ) : (
-        <img 
-          src={src} 
-          alt={alt} 
-          className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
-          onClick={onClick}
-          loading={isFirstImage ? "eager" : "lazy"}
-          onLoad={() => setIsLoaded(true)}
-          onError={() => setHasError(true)}
-          decoding="async"
-        />
-      )}
-    </div>
-  );
-};
 
 const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
@@ -117,7 +73,9 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                           alt={`${project.title} - imagem ${index + 1}`}
                           className="max-w-full max-h-[60vh] object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform duration-200"
                           onClick={() => setZoomedImage(image)}
-                          isFirstImage={index === 0}
+                          priority={index === 0 ? 10 : index < 3 ? 8 : 5}
+                          loading={index === 0 ? "eager" : "lazy"}
+                          placeholder={true}
                         />
                       </div>
                     </CarouselItem>
@@ -144,7 +102,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                   <h3 className="text-lg font-bold mb-3">Habilidades</h3>
                   <div className="flex flex-wrap gap-2">
                   {project.skills.map(skill => (
-                      <span key={skill} className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">{skill}</span>
+                      <span key={skill} className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm transition-colors">{skill}</span>
                   ))}
                   </div>
               </div>
@@ -162,6 +120,9 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                 alt="Imagem ampliada"
                 className="max-w-full max-h-full object-contain cursor-pointer"
                 onClick={() => setZoomedImage(null)}
+                priority={10}
+                loading="eager"
+                placeholder={false}
               />
             </div>
           </DialogContent>

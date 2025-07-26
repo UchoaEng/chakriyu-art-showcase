@@ -63,19 +63,12 @@ const ContactSection = () => {
 
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-green-500 dark:bg-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">📱</span>
+                  <span className="text-white font-bold">💬</span>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-800 dark:text-white transition-colors">WhatsApp</h3>
-                  <a 
-                    href="https://wa.me/5581987648229?text=Olá! Vi seu portfólio e gostaria de conversar sobre um projeto."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors"
-                  >
-                    +55 (81) 98764-8229
-                  </a>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 transition-colors">Clique para conversar</p>
+                  <p className="text-gray-600 dark:text-gray-300 transition-colors">Disponível para conversas</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 transition-colors">Entre em contato pelo formulário</p>
                 </div>
               </div>
 

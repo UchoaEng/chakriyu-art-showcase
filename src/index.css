@@ -51,6 +51,12 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
   }
 
   .dark {
@@ -89,6 +95,12 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
@@ -136,4 +148,175 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+/* Otimizações de performance para animações */
+@layer utilities {
+  /* Fade-in otimizado com will-change */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    will-change: opacity, transform;
+  }
+
+  /* Fade-in com delay */
+  .animate-fade-in-delayed {
+    animation: fadeInDelayed 0.8s ease-out forwards;
+    will-change: opacity, transform;
+  }
+
+  /* Skeleton loading otimizado */
+  .animate-pulse-subtle {
+    animation: pulseSubtle 2s ease-in-out infinite;
+    will-change: opacity;
+  }
+
+  /* Hover scale otimizado */
+  .hover-scale {
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Blur placeholder */
+  .blur-placeholder {
+    filter: blur(8px);
+    transform: scale(1.02);
+    transition: filter 0.3s ease-out, transform 0.3s ease-out;
+  }
+
+  /* Suporte para reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-fade-in-delayed,
+    .animate-pulse-subtle,
+    .hover-scale {
+      animation: none;
+      transition: none;
+    }
+  }
+
+  /* Otimização para imagens */
+  .optimized-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* Container de loading com placeholder */
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+      45deg,
+      hsl(var(--muted)) 25%,
+      transparent 25%,
+      transparent 75%,
+      hsl(var(--muted)) 75%
+    );
+    background-size: 20px 20px;
+  }
+
+  /* Gradiente shimmer para loading */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Dark mode shimmer */
+  .dark .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+  }
+}
+
+/* Keyframes otimizadas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDelayed {
+  0%, 30% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Lazy loading específico */
+.lazy-loading {
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+.lazy-loaded {
+  opacity: 1;
+}
+
+/* Placeholder blur effect */
+.blur-load {
+  filter: blur(5px);
+  transition: filter 0.3s;
+}
+
+.blur-load.loaded {
+  filter: blur(0);
+}
+
+/* Performance hints para navegadores */
+img {
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 200px;
+}
+
+/* Otimizações para viewport */
+@media (max-width: 768px) {
+  .animate-fade-in {
+    animation-duration: 0.4s;
+  }
+  
+  .hover-scale:hover {
+    transform: none; /* Desabilita hover em mobile */
+  }
 }
