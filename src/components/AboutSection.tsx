@@ -23,24 +23,18 @@ const AboutSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6 transition-colors">
               Sobre Mim
             </h2>
-            
+
             <div className="space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed transition-colors">
               <p className="text-lg">
-                Sou uma <strong className="text-portfolio-lavender dark:text-portfolio-pink">mixed media artist</strong> apaixonada 
-                por criar experiências visuais que contam histórias. Minha inspiração vem da beleza feminina, 
-                fofura, gatos, plantas e boa comida - elementos que se refletem em meu trabalho criativo.
+                Sou Designer Gráfica e Ilustradora, especializada em branding, identidade visual autoral e design criativo. Apaixonada por cultura pop, universo geek e otaku, busco unir estética, estratégia e inovação para criar projetos que contam histórias únicas e geram conexões reais.
               </p>
 
               <p>
-                Atualmente trabalho como <strong className="text-portfolio-lavender dark:text-portfolio-pink">Assistente de Marketing na Softplan</strong>, 
-                onde combino conhecimentos de arte e narrativa visual em projetos diversos. Esta experiência me 
-                permite unir criatividade com estratégia de marketing.
+                Atuo em ambientes corporativos e também à frente da ChakriLoja, minha marca autoral que transforma ilustrações e referências dos anos 2000/2010 em produtos criativos e cheios de personalidade.
               </p>
 
               <p>
-                Minha formação inclui <strong className="text-portfolio-lavender dark:text-portfolio-pink">Graduação em Artes Visuais</strong> (iniciada) 
-                e <strong className="text-portfolio-lavender dark:text-portfolio-pink">Design Gráfico</strong> (cursando atualmente), 
-                proporcionando uma base sólida tanto teórica quanto prática.
+                Estou em constante aprendizado sobre tendências de design, tecnologias digitais e metodologias ágeis, sempre em busca de entregar soluções atuais e eficazes.
               </p>
             </div>
 
