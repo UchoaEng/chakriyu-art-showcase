@@ -1,5 +1,12 @@
 export const projectData = [
   {
+    title: "Porquinhoo - Finanças para Crianças",
+    folder: "Porquinhoo",
+    description: "Identidade visual para aplicativo de finanças voltado a crianças e adolescentes, com visual lúdico e educativo.",
+    category: "Identidade Visual",
+    skills: ["Identidade Visual", "Design de App", "Branding"]
+  },
+  {
     title: "The Wave - Loja de Presentes",
     folder: "The Wave - Loja de Presentes",
     description: "Identidade visual completa para loja de presentes, incluindo logo, paleta de cores e aplicações em diferentes materiais.",
