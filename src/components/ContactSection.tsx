@@ -15,13 +15,13 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Simular envio do formulário
     toast({
       title: "Mensagem enviada!",
       description: "Obrigada pelo contato! Retornarei em breve.",
     });
-    
+
     // Limpar formulário
     setFormData({ name: '', email: '', message: '' });
   };
@@ -42,10 +42,10 @@ const ContactSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6 transition-colors">
               Vamos Trabalhar Juntos
             </h2>
-            
+
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed transition-colors">
-              Estou sempre aberta a novos projetos e oportunidades. 
-              Se você tem uma ideia ou precisa de ajuda com design, 
+              Estou sempre aberta a novos projetos e oportunidades.
+              Se você tem uma ideia ou precisa de ajuda com design,
               vamos conversar!
             </p>
 
@@ -90,7 +90,6 @@ const ContactSection = () => {
                 <div>
                   <h3 className="font-semibold text-gray-800 dark:text-white transition-colors">Disponibilidade</h3>
                   <p className="text-gray-600 dark:text-gray-300 transition-colors">Aberta para projetos freelance</p>
-                  <p className="text-sm text-portfolio-lavender dark:text-portfolio-pink transition-colors">Membro desde Junho 2020</p>
                 </div>
               </div>
             </div>
@@ -124,7 +123,7 @@ const ContactSection = () => {
             <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 transition-colors">
               Envie uma Mensagem
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
