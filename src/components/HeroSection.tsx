@@ -43,8 +43,7 @@ const HeroSection = () => {
 
           {/* Descrição */}
           <p className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed transition-colors">
-            Mixed media artist inspirada por arte, narrativa visual e criatividade. 
-            Especialista em branding, identidade visual e ilustração digital.
+            Designer Gráfica com experiência em marketing digital, branding, campanhas visuais, e-mail marketing, redes sociais e materiais institucionais. Atua na criação de layouts, identidade visual e peças digitais com foco em performance e engajamento. Perfil criativo, colaborativo e orientado a resultados.
           </p>
 
           {/* Localização */}

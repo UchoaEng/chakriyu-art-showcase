@@ -1,5 +1,12 @@
 export const projectData = [
   {
+    title: "Baralho Criativo",
+    folder: "Just Married (or not) - Characters",
+    description: "Design de embalagem inspirado em Silksong, combinando ilustração autoral e elementos gráficos para reinterpretar os Ases do baralho.",
+    category: "Arte digital",
+    skills: ["Ilustração", "Design gráfico", "Design de embalagem"]
+  },
+  {
     title: "Porquinhoo - Finanças para Crianças",
     folder: "Porquinhoo",
     description: "Identidade visual para aplicativo de finanças voltado a crianças e adolescentes, com visual lúdico e educativo.",
@@ -19,20 +26,6 @@ export const projectData = [
     description: "Design de embalagens sustentáveis para linha de cosméticos naturais, priorizando elementos orgânicos e cores terrosas.",
     category: "Design de Produto",
     skills: ["Design de Embalagem", "Sustentabilidade", "Branding"]
-  },
-  {
-    title: "Doce Miau - Cat Café",
-    folder: "Doce Miau - Cat Café",
-    description: "Identidade visual fofa e aconchegante para cat café, combinando elementos felinos com design acolhedor.",
-    category: "Identidade Visual",
-    skills: ["Ilustração", "Branding", "Design de Personagem"]
-  },
-  {
-    title: "Just Married (or not) - Characters",
-    folder: "Just Married (or not) - Characters",
-    description: "Desenvolvimento de personagens para projeto editorial, explorando narrativas visuais e expressões emocionais.",
-    category: "Ilustração",
-    skills: ["Design de Personagem", "Ilustração Digital", "Narrativa Visual"]
   },
   {
     title: "Children's Book Cover",
