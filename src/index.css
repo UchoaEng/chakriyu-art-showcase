@@ -119,11 +119,8 @@ img { display: block; max-width: 100%; }
 
 .navigation-wrap.is-scrolled { top: 8px; width: min(1050px, calc(100vw - 28px)); }
 .brand { display: inline-flex; align-items: center; gap: 11px; justify-self: start; background: none; border: 0; cursor: pointer; }
-.brand-mark { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(222, 186, 111, 0.55); border-radius: 10px 3px 10px 3px; color: var(--cream); }
-.brand-mark svg { width: 23px; height: 23px; overflow: visible; }
-.brand-symbol-primary { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 3.4; }
-.brand-symbol-accent { fill: none; stroke: var(--gold); stroke-linecap: round; stroke-width: 3.4; }
-.brand-symbol-dot { fill: var(--gold); }
+.brand-mark { display: grid; place-items: center; width: 38px; height: 38px; }
+.brand-mark img { width: 100%; height: 100%; }
 .brand-name { color: var(--cream); font-size: 0.76rem; letter-spacing: 0.02em; }
 .nav-links { display: flex; align-items: center; gap: 4px; }
 .nav-links button { padding: 10px 13px; border: 0; background: none; color: rgba(255, 248, 216, 0.7); cursor: pointer; font-size: 0.72rem; transition: color 180ms ease; }
@@ -289,8 +286,8 @@ img { display: block; max-width: 100%; }
 /* Footer */
 .site-footer { padding: 58px 0; background: var(--ink); color: var(--cream); }
 .footer-inner { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
-.footer-mark { display: inline-grid; width: 50px; height: 50px; place-items: center; border: 1px solid rgba(222,186,111,.55); border-radius: 13px 4px 13px 4px; color: var(--cream); }
-.footer-mark svg { width: 30px; height: 30px; overflow: visible; }
+.footer-mark { display: inline-grid; width: 50px; height: 50px; place-items: center; }
+.footer-mark img { width: 100%; height: 100%; }
 .footer-inner p { margin: 20px 0 0; color: rgba(255,248,216,.5); font-size: .72rem; line-height: 1.55; }
 .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 28px; color: rgba(255,248,216,.42); font-size: .63rem; }
 .footer-right button { padding: 0 0 4px; border: 0; border-bottom: 1px solid rgba(255,248,216,.5); background: none; color: var(--cream); cursor: pointer; font-size: .7rem; }

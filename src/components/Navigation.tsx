@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "motion/react";
-import BrandMark from "./BrandMark";
 
 const navigationItems = [
   { key: "projects", href: "#projects" },
@@ -32,7 +31,7 @@ const Navigation = () => {
     <header className={`navigation-wrap ${isScrolled ? "is-scrolled" : ""}`}>
       <nav className="navigation" aria-label={t("nav.label")}>
         <button className="brand" onClick={() => navigateTo("#home")} aria-label={t("nav.home")}>
-          <span className="brand-mark"><BrandMark /></span>
+          <span className="brand-mark"><img src="/favicon.svg" alt="" aria-hidden="true" /></span>
           <span className="brand-name">Rebecca Chakrian</span>
         </button>
 
