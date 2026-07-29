@@ -1,82 +1,43 @@
+import { Bot, BriefcaseBusiness, MessagesSquare } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import MotionReveal from "./MotionReveal";
+
+const pillars = [
+  { key: "brand", icon: BriefcaseBusiness },
+  { key: "communication", icon: MessagesSquare },
+  { key: "technology", icon: Bot },
+] as const;
+
 const AboutSection = () => {
+  const { t } = useTranslation();
+
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900 transition-colors">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Imagem */}
-          <div className="order-2 lg:order-1">
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-portfolio-sage to-portfolio-purple dark:from-gray-700 dark:to-gray-600 rounded-2xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop"
-                  alt="Rebecca trabalhando"
-                  className="w-full h-full object-cover mix-blend-overlay dark:mix-blend-soft-light"
-                />
-              </div>
-              {/* Elemento decorativo */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-portfolio-pink dark:bg-portfolio-pink/80 rounded-full opacity-60"></div>
+    <section id="about" className="about-section">
+      <div className="page-container">
+        <MotionReveal>
+          <header className="section-heading section-heading-dark about-heading">
+            <div>
+              <p className="eyebrow light">{t("about.eyebrow")}</p>
+              <h2>{t("about.heading")}</h2>
             </div>
+            <p>{t("about.intro")}</p>
+          </header>
+        </MotionReveal>
+
+        <MotionReveal delay={0.08}>
+          <div className="about-pillars">
+            {pillars.map(({ key, icon: Icon }) => (
+              <article key={key} className="about-pillar">
+                <div className="about-pillar-top">
+                  <span>{t(`about.pillars.${key}.index`)}</span>
+                  <Icon size={18} strokeWidth={1.45} aria-hidden="true" />
+                </div>
+                <h3>{t(`about.pillars.${key}.title`)}</h3>
+                <p>{t(`about.pillars.${key}.text`)}</p>
+              </article>
+            ))}
           </div>
-
-          {/* Conteúdo */}
-          <div className="order-1 lg:order-2">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6 transition-colors">
-              Sobre Mim
-            </h2>
-
-            <div className="space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed transition-colors">
-              <p className="text-lg">
-                Sou Designer Gráfica e Ilustradora, especializada em branding, identidade visual autoral e design criativo. Apaixonada por cultura pop, universo geek e otaku, busco unir estética, estratégia e inovação para criar projetos que contam histórias únicas e geram conexões reais.
-              </p>
-
-              <p>
-                Atuo em ambientes corporativos e também à frente da ChakriLoja, minha marca autoral que transforma ilustrações e referências dos anos 2000/2010 em produtos criativos e cheios de personalidade.
-              </p>
-
-              <p>
-                Estou em constante aprendizado sobre tendências de design, tecnologias digitais e metodologias ágeis, sempre em busca de entregar soluções atuais e eficazes.
-              </p>
-            </div>
-
-            {/* Estatísticas */}
-            <div className="mt-8 grid grid-cols-2 gap-6">
-              <div className="text-center p-4 bg-portfolio-cream dark:bg-gray-700 rounded-xl transition-colors">
-                <div className="text-2xl font-bold text-portfolio-lavender dark:text-portfolio-pink transition-colors">4+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-300 transition-colors">Anos de Experiência</div>
-              </div>
-              <div className="text-center p-4 bg-portfolio-cream dark:bg-gray-700 rounded-xl transition-colors">
-                <div className="text-2xl font-bold text-portfolio-lavender dark:text-portfolio-pink transition-colors">15+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-300 transition-colors">Projetos Realizados</div>
-              </div>
-            </div>
-
-            {/* Habilidades */}
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4 transition-colors">Habilidades Principais</h3>
-              <div className="space-y-3">
-                {[
-                  { skill: 'Design Gráfico & Identidade Visual', level: 95 },
-                  { skill: 'Ilustração Digital', level: 90 },
-                  { skill: 'Branding & Marketing Visual', level: 85 },
-                  { skill: 'Arte para Streaming', level: 80 }
-                ].map((item) => (
-                  <div key={item.skill}>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors">{item.skill}</span>
-                      <span className="text-sm text-portfolio-lavender dark:text-portfolio-pink transition-colors">{item.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
-                      <div
-                        className="bg-gradient-to-r from-portfolio-pink to-portfolio-lavender dark:from-portfolio-pink/80 dark:to-portfolio-pink h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${item.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        </MotionReveal>
       </div>
     </section>
   );

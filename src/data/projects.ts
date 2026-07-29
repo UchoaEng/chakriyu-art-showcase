@@ -1,44 +1,66 @@
-export const projectData = [
+export interface Project {
+  id: "baralho" | "porquinhoo" | "wave" | "natureba" | "book" | "twitch";
+  folder: string;
+  cover: string;
+  images: string[];
+  categoryKey: "digitalArt" | "visualIdentity" | "branding" | "productDesign" | "editorialIllustration";
+  skillKeys: string[];
+}
+
+export const projectData: Project[] = [
   {
-    title: "Baralho Criativo",
+    id: "baralho",
     folder: "Just Married (or not) - Characters",
-    description: "Design de embalagem inspirado em Silksong, combinando ilustração autoral e elementos gráficos para reinterpretar os Ases do baralho.",
-    category: "Arte digital",
-    skills: ["Ilustração", "Design gráfico", "Design de embalagem"]
+    cover: "/projects/Just Married (or not) - Characters/tbm.png",
+    images: Array.from({ length: 6 }, (_, index) => `/projects/Just Married (or not) - Characters/${index + 1}.png`),
+    categoryKey: "digitalArt",
+    skillKeys: ["illustration", "graphicDesign", "packaging"],
   },
   {
-    title: "Porquinhoo - Finanças para Crianças",
+    id: "porquinhoo",
     folder: "Porquinhoo",
-    description: "Identidade visual para aplicativo de finanças voltado a crianças e adolescentes, com visual lúdico e educativo.",
-    category: "Identidade Visual",
-    skills: ["Identidade Visual", "Design de App", "Branding"]
+    cover: "/projects/Porquinhoo/1.jpg",
+    images: Array.from({ length: 11 }, (_, index) => `/projects/Porquinhoo/${index + 1}.jpg`),
+    categoryKey: "visualIdentity",
+    skillKeys: ["branding", "appDesign", "artDirection"],
   },
   {
-    title: "The Wave - Loja de Presentes",
+    id: "wave",
     folder: "The Wave - Loja de Presentes",
-    description: "Identidade visual completa para loja de presentes, incluindo logo, paleta de cores e aplicações em diferentes materiais.",
-    category: "Branding",
-    skills: ["Identidade Visual", "Design Gráfico", "Branding"]
+    cover: "/projects/The Wave - Loja de Presentes/tbm.png",
+    images: Array.from({ length: 10 }, (_, index) => `/projects/The Wave - Loja de Presentes/${index + 1}.png`),
+    categoryKey: "branding",
+    skillKeys: ["visualIdentity", "graphicDesign", "applications"],
   },
   {
-    title: "Natureba - Cosméticos Naturais",
+    id: "natureba",
     folder: "Natureba - Cosméticos Naturais",
-    description: "Design de embalagens sustentáveis para linha de cosméticos naturais, priorizando elementos orgânicos e cores terrosas.",
-    category: "Design de Produto",
-    skills: ["Design de Embalagem", "Sustentabilidade", "Branding"]
+    cover: "/projects/Natureba - Cosméticos Naturais/tbm.png",
+    images: Array.from({ length: 11 }, (_, index) => `/projects/Natureba - Cosméticos Naturais/${index + 1}.png`),
+    categoryKey: "productDesign",
+    skillKeys: ["packaging", "branding", "sustainability"],
   },
   {
-    title: "Children's Book Cover",
+    id: "book",
     folder: "Children's Book Cover",
-    description: "Capa ilustrada para livro infantil, criando uma composição que desperta curiosidade e convida à leitura.",
-    category: "Ilustração Editorial",
-    skills: ["Ilustração", "Design Editorial", "Arte Infantil"]
+    cover: "/projects/Children's Book Cover/tbm.png",
+    images: [
+      "/projects/Children's Book Cover/1.jpg",
+      "/projects/Children's Book Cover/2.png",
+      "/projects/Children's Book Cover/3.jpg",
+      "/projects/Children's Book Cover/4.png",
+      "/projects/Children's Book Cover/5.jpg",
+      "/projects/Children's Book Cover/6.png",
+    ],
+    categoryKey: "editorialIllustration",
+    skillKeys: ["illustration", "editorialDesign", "visualNarrative"],
   },
   {
-    title: "Twitch Arts Collection",
+    id: "twitch",
     folder: "Twitch Arts Collection",
-    description: "Coleção de emotes, badges e alerts para streamers da Twitch, com foco em expressividade e reconhecimento rápido.",
-    category: "Arte Digital",
-    skills: ["Arte para Streaming", "Emotes", "Design Digital"]
-  }
-]; 
+    cover: "/projects/Twitch Arts Collection/tbm.png",
+    images: [1, 2, 4, 5, 6, 7, 8, 9, 10].map((number) => `/projects/Twitch Arts Collection/${number}.png`),
+    categoryKey: "digitalArt",
+    skillKeys: ["emotes", "digitalDesign", "illustration"],
+  },
+];

@@ -1,78 +1,83 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
+import { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { AnimatePresence, motion } from "motion/react";
+
+const navigationItems = [
+  { key: "projects", href: "#projects" },
+  { key: "about", href: "#about" },
+  { key: "experience", href: "#experience" },
+  { key: "contact", href: "#contact" },
+] as const;
 
 const Navigation = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const navItems = [
-    { name: 'Início', href: '#home' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Projetos', href: '#projects' },
-    { name: 'Contato', href: '#contact' }
-  ];
+  useEffect(() => {
+    const updateNavigation = () => setIsScrolled(window.scrollY > 24);
+    updateNavigation();
+    window.addEventListener("scroll", updateNavigation, { passive: true });
+    return () => window.removeEventListener("scroll", updateNavigation);
+  }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const navigateTo = (href: string) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b border-portfolio-pink/20 dark:border-gray-700/50 transition-colors">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <div className="text-2xl font-bold text-portfolio-lavender dark:text-portfolio-pink">
-            Rebecca Chakrian
-          </div>
+    <header className={`navigation-wrap ${isScrolled ? "is-scrolled" : ""}`}>
+      <nav className="navigation" aria-label={t("nav.label")}>
+        <button className="brand" onClick={() => navigateTo("#home")} aria-label={t("nav.home")}>
+          <span className="brand-mark">RC</span>
+          <span className="brand-name">Rebecca Chakrian</span>
+        </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-portfolio-lavender dark:hover:text-portfolio-pink transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </button>
-            ))}
-            <ThemeToggle />
-          </div>
-
-          {/* Mobile menu button and theme toggle */}
-          <div className="md:hidden flex items-center space-x-3">
-            <ThemeToggle />
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300 hover:text-portfolio-lavender dark:hover:text-portfolio-pink transition-colors"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+        <div className="nav-links" aria-label={t("nav.sections")}>
+          {navigationItems.map((item) => (
+            <button key={item.href} onClick={() => navigateTo(item.href)}>
+              {t(`nav.${item.key}`)}
             </button>
-          </div>
+          ))}
         </div>
 
-        {/* Mobile Navigation */}
+        <a className="nav-contact" href="mailto:chakriyuartist@gmail.com">
+          {t("nav.talk")} <ArrowUpRight size={15} aria-hidden="true" />
+        </a>
+
+        <button
+          className="nav-menu-button"
+          onClick={() => setIsOpen((current) => !current)}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          aria-label={isOpen ? t("nav.close") : t("nav.open")}
+        >
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </nav>
+
+      <AnimatePresence initial={false}>
         {isOpen && (
-          <div className="md:hidden pb-4">
-            <div className="flex flex-col space-y-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left py-2 text-gray-700 dark:text-gray-300 hover:text-portfolio-lavender dark:hover:text-portfolio-pink transition-colors duration-200"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
-          </div>
+          <motion.div
+            className="mobile-menu"
+            id="mobile-menu"
+            initial={{ opacity: 0, y: -8, height: 0 }}
+            animate={{ opacity: 1, y: 0, height: "auto" }}
+            exit={{ opacity: 0, y: -6, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {navigationItems.map((item) => (
+              <button key={item.href} onClick={() => navigateTo(item.href)}>
+                {t(`nav.${item.key}`)}
+              </button>
+            ))}
+            <a href="mailto:chakriyuartist@gmail.com">chakriyuartist@gmail.com</a>
+          </motion.div>
         )}
-      </div>
-    </nav>
+      </AnimatePresence>
+    </header>
   );
 };
 

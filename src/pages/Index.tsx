@@ -1,22 +1,29 @@
+import Navigation from "@/components/Navigation";
+import HeroSection from "@/components/HeroSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import AboutSection from "@/components/AboutSection";
+import SkillsSection from "@/components/SkillsSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import FormationSection from "@/components/FormationSection";
+import CertificationsSection from "@/components/CertificationsSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
-import Navigation from '@/components/Navigation';
-import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
-
-const Index = () => {
-  return (
-    <div className="min-h-screen">
-      <Navigation />
+const Index = () => (
+  <div className="site-shell">
+    <Navigation />
+    <main>
       <HeroSection />
-      <AboutSection />
       <ProjectsSection />
+      <AboutSection />
+      <SkillsSection />
+      <ExperienceSection />
+      <FormationSection />
+      <CertificationsSection />
       <ContactSection />
-      <Footer />
-    </div>
-  );
-};
+    </main>
+    <Footer />
+  </div>
+);
 
 export default Index;

@@ -1,6 +1,6 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { OptimizedImage } from './OptimizedImage';
-import { preloadOnHover } from '@/utils/imagePreloader';
+import { ArrowUpRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
 
 interface ProjectCardProps {
   title: string;
@@ -8,61 +8,44 @@ interface ProjectCardProps {
   image: string;
   category: string;
   skills: string[];
+  index: number;
   onClick: () => void;
 }
 
-const ProjectCard = ({ title, description, image, category, skills, onClick }: ProjectCardProps) => {
-  const handleMouseEnter = () => {
-    // Preload da imagem quando hover
-    if (image) {
-      preloadOnHover(image);
-    }
-  };
+const ProjectCard = ({ title, description, image, category, skills, index, onClick }: ProjectCardProps) => {
+  const { t } = useTranslation();
 
   return (
-    <Card 
-      onClick={onClick}
-      onMouseEnter={handleMouseEnter}
-      className="group hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border-0 bg-white dark:bg-gray-800 cursor-pointer"
+    <motion.article
+      layout
+      initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, amount: 0.18 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.68, delay: Math.min(index * 0.07, 0.21), ease: [0.22, 1, 0.36, 1] }}
+      className={`project-card project-card-${index + 1}`}
     >
-      <div className="relative overflow-hidden h-64">
-        <OptimizedImage
-          src={image}
-          alt={title}
-          className="w-full h-64 object-cover group-hover:scale-110 transition-all duration-500"
-          priority={3}
-          placeholder={true}
-          aspectRatio="16/9"
-          loading="lazy"
-        />
-        
-        <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-portfolio-pink/90 dark:bg-portfolio-pink/80 text-portfolio-lavender dark:text-white text-xs font-medium rounded-full">
-            {category}
-          </span>
+      <button className="project-image-button" onClick={onClick} aria-label={t("projects.open", { title })}>
+        <img src={image} alt="" loading={index < 2 ? "eager" : "lazy"} />
+        <span className="project-view">
+          {t("projects.view")} <ArrowUpRight size={16} aria-hidden="true" />
+        </span>
+      </button>
+
+      <div className="project-content">
+        <div className="project-meta">
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <span>{category}</span>
+        </div>
+        <h3>
+          <button onClick={onClick}>{title}</button>
+        </h3>
+        <p>{description}</p>
+        <div className="project-skills" aria-label={t("projects.skillsLabel")}>
+          {skills.map((skill) => <span key={skill}>{skill}</span>)}
         </div>
       </div>
-      
-      <CardContent className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-portfolio-lavender dark:group-hover:text-portfolio-pink transition-colors">
-          {title}
-        </h3>
-        <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed transition-colors">
-          {description}
-        </p>
-        
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <span
-              key={skill}
-              className="px-2 py-1 bg-portfolio-sage/20 dark:bg-portfolio-sage/30 text-portfolio-lavender dark:text-portfolio-pink text-xs rounded transition-colors"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
+    </motion.article>
   );
 };
 
