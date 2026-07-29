@@ -1,5 +1,5 @@
 export interface Project {
-  id: "baralho" | "porquinhoo" | "wave" | "natureba" | "book" | "twitch";
+  id: "starian" | "baralho" | "porquinhoo" | "wave" | "natureba" | "twitch";
   folder: string;
   cover: string;
   images: string[];
@@ -8,6 +8,15 @@ export interface Project {
 }
 
 export const projectData: Project[] = [
+  {
+    id: "starian",
+    folder: "Starian - Conteudo e Campanhas",
+    cover: "/projects/Starian - Conteudo e Campanhas/capa.JPG",
+    images: ["capa", "Slide2", "Slide3", "Slide4", "Slide5", "Slide6", "Slide7", "Slide8"]
+      .map((name) => `/projects/Starian - Conteudo e Campanhas/${name}.JPG`),
+    categoryKey: "branding",
+    skillKeys: ["campaignDesign", "emailMarketing", "digitalDesign", "appliedAI"],
+  },
   {
     id: "baralho",
     folder: "Just Married (or not) - Characters",
@@ -39,21 +48,6 @@ export const projectData: Project[] = [
     images: Array.from({ length: 11 }, (_, index) => `/projects/Natureba - Cosméticos Naturais/${index + 1}.png`),
     categoryKey: "productDesign",
     skillKeys: ["packaging", "branding", "sustainability"],
-  },
-  {
-    id: "book",
-    folder: "Children's Book Cover",
-    cover: "/projects/Children's Book Cover/tbm.png",
-    images: [
-      "/projects/Children's Book Cover/1.jpg",
-      "/projects/Children's Book Cover/2.png",
-      "/projects/Children's Book Cover/3.jpg",
-      "/projects/Children's Book Cover/4.png",
-      "/projects/Children's Book Cover/5.jpg",
-      "/projects/Children's Book Cover/6.png",
-    ],
-    categoryKey: "editorialIllustration",
-    skillKeys: ["illustration", "editorialDesign", "visualNarrative"],
   },
   {
     id: "twitch",

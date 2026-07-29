@@ -82,8 +82,15 @@ const resources = {
           visualNarrative: "Narrativa visual",
           emotes: "Emotes",
           digitalDesign: "Design digital",
+          campaignDesign: "Design de campanha",
+          emailMarketing: "E-mail marketing",
+          appliedAI: "IA aplicada",
         },
         items: {
+          starian: {
+            title: "Conteúdo & Campanhas — Starian",
+            description: "Sistema contínuo de produção para Construmanager, Sienge Construcompras e Sienge Construpoint, reunindo social media, Meta Ads, banners, e-mail marketing em HTML e um banco de imagens proprietário criado com IA.",
+          },
           baralho: {
             title: "Baralho Criativo",
             description: "Uma releitura autoral dos ases de baralho inspirada em Silksong, construída entre ilustração, composição gráfica e design de embalagem.",
@@ -99,10 +106,6 @@ const resources = {
           natureba: {
             title: "Natureba",
             description: "Embalagens para uma linha de cosméticos naturais, orientadas por materiais, elementos orgânicos e uma presença visual delicada.",
-          },
-          book: {
-            title: "Capa para livro infantil",
-            description: "Composição ilustrada que transforma a capa em convite à leitura, articulando narrativa, cor e imaginação para o público infantil.",
           },
           twitch: {
             title: "Twitch Arts Collection",
@@ -331,8 +334,15 @@ const resources = {
           visualNarrative: "Visual narrative",
           emotes: "Emotes",
           digitalDesign: "Digital design",
+          campaignDesign: "Campaign design",
+          emailMarketing: "Email marketing",
+          appliedAI: "Applied AI",
         },
         items: {
+          starian: {
+            title: "Content & Campaigns — Starian",
+            description: "An ongoing production system for Construmanager, Sienge Construcompras and Sienge Construpoint, bringing together social media, Meta Ads, banners, HTML email marketing and a proprietary AI-generated image library.",
+          },
           baralho: {
             title: "Creative Card Deck",
             description: "An original reinterpretation of playing-card aces inspired by Silksong, combining illustration, graphic composition and packaging design.",
@@ -348,10 +358,6 @@ const resources = {
           natureba: {
             title: "Natureba",
             description: "Packaging for a natural cosmetics line, guided by materials, organic elements and a delicate visual presence.",
-          },
-          book: {
-            title: "Children's book cover",
-            description: "An illustrated composition that turns the cover into an invitation to read, bringing together narrative, color and imagination.",
           },
           twitch: {
             title: "Twitch Arts Collection",
