@@ -43,7 +43,7 @@ const Navigation = () => {
           ))}
         </div>
 
-        <a className="nav-contact" href="mailto:chakriyuartist@gmail.com">
+        <a className="nav-contact" href="mailto:rebecca.chakrian.design@gmail.com">
           {t("nav.talk")} <ArrowUpRight size={15} aria-hidden="true" />
         </a>
 
@@ -73,7 +73,7 @@ const Navigation = () => {
                 {t(`nav.${item.key}`)}
               </button>
             ))}
-            <a href="mailto:chakriyuartist@gmail.com">chakriyuartist@gmail.com</a>
+            <a href="mailto:rebecca.chakrian.design@gmail.com">rebecca.chakrian.design@gmail.com</a>
           </motion.div>
         )}
       </AnimatePresence>

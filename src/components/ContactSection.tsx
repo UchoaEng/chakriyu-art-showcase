@@ -12,7 +12,7 @@ const ContactSection = () => {
     event.preventDefault();
     const subject = encodeURIComponent(t("contact.mailSubject", { name: formData.name }));
     const body = encodeURIComponent(`${formData.message}\n\n${t("contact.mailReturn", { email: formData.email })}`);
-    window.location.href = `mailto:chakriyuartist@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:rebecca.chakrian.design@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -32,9 +32,9 @@ const ContactSection = () => {
           <div className="contact-grid">
             <div className="contact-details">
               <div className="contact-list">
-                <a href="mailto:chakriyuartist@gmail.com">
+                <a href="mailto:rebecca.chakrian.design@gmail.com">
                   <Mail size={18} aria-hidden="true" />
-                  <span><small>{t("contact.emailLabel")}</small>chakriyuartist@gmail.com</span>
+                  <span><small>{t("contact.emailLabel")}</small>rebecca.chakrian.design@gmail.com</span>
                   <ArrowUpRight size={17} aria-hidden="true" />
                 </a>
                 <div>

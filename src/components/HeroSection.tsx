@@ -26,7 +26,7 @@ const HeroSection = () => {
             <button className="button button-gold" onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}>
               {t("hero.explore")} <ArrowDown size={17} aria-hidden="true" />
             </button>
-            <a className="text-link light" href="mailto:chakriyuartist@gmail.com">
+            <a className="text-link light" href="mailto:rebecca.chakrian.design@gmail.com">
               {t("hero.talk")} <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
