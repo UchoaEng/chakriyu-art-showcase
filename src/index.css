@@ -180,7 +180,9 @@ img { display: block; max-width: 100%; }
 /* Projects */
 .projects-section { padding: 130px 0 120px; background: var(--cream); }
 .section-heading { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 70px; align-items: end; }
-.section-heading h2, .contact-heading h2 { margin: 0; color: var(--wine); font-family: var(--serif); font-size: clamp(3.3rem, 6vw, 6.6rem); font-weight: 400; font-kerning: normal; letter-spacing: -0.035em; line-height: 0.92; }
+.section-heading > *,
+.section-heading h2 { min-width: 0; }
+.section-heading h2, .contact-heading h2 { margin: 0; color: var(--wine); font-family: var(--serif); font-size: clamp(3.3rem, 6vw, 6.6rem); font-weight: 400; font-kerning: normal; letter-spacing: -0.035em; line-height: 0.92; overflow-wrap: break-word; }
 .section-heading h2 em, .contact-heading h2 em { color: var(--ink); font-weight: 400; }
 .section-heading > p { max-width: 430px; margin: 0 0 8px; color: rgba(30, 0, 14, 0.62); font-size: 0.93rem; line-height: 1.75; }
 .section-heading-dark h2 { color: var(--cream); }
@@ -328,7 +330,7 @@ img { display: block; max-width: 100%; }
   .hero-notes-rule { display: none; }
   .glass-note.hero-note { position: relative; inset: auto; width: 100%; }
   .projects-section, .about-section, .contact-section { padding: 92px 0 82px; }
-  .section-heading h2, .contact-heading h2 { font-size: clamp(3.1rem, 17vw, 5rem); }
+  .section-heading h2, .contact-heading h2 { font-size: clamp(2.7rem, 13vw, 3.8rem); hyphens: none; }
   .project-filters { flex-wrap: nowrap; margin-right: -14px; overflow-x: auto; scrollbar-width: none; }
   .project-filters::-webkit-scrollbar { display: none; }
   .project-filters button { flex: 0 0 auto; }
@@ -781,9 +783,11 @@ body {
   .experience-entry > header { grid-template-columns: 1fr; gap: 18px; }
   .experience-entry + .experience-entry .experience-marker { top: 64px; }
   .experience-copy { gap: 18px; }
-  .formation-entry { grid-template-columns: 28px 1fr; }
+  .formation-entry { grid-template-columns: 28px minmax(0, 1fr); }
+  .formation-entry > div,
+  .certification-row > div { min-width: 0; }
   .formation-status { grid-column: 2; align-items: flex-start; text-align: left; }
   .certifications-layout { padding-top: 82px; }
-  .certification-row { grid-template-columns: 28px 1fr auto; gap: 12px; }
-  .certification-row h3 { font-size: 1.25rem; }
+  .certification-row { grid-template-columns: 28px minmax(0, 1fr) auto; gap: 12px; }
+  .certification-row h3 { font-size: 1.25rem; overflow-wrap: anywhere; }
 }

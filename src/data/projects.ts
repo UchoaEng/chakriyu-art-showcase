@@ -20,7 +20,7 @@ export const projectData: Project[] = [
   {
     id: "baralho",
     folder: "Just Married (or not) - Characters",
-    cover: "/projects/Just Married (or not) - Characters/tbm.png",
+    cover: "/projects/Just Married (or not) - Characters/capa-silksong.png",
     images: Array.from({ length: 6 }, (_, index) => `/projects/Just Married (or not) - Characters/${index + 1}.png`),
     categoryKey: "digitalArt",
     skillKeys: ["illustration", "graphicDesign", "packaging"],
