@@ -1,0 +1,17 @@
+{
+  "name": "Rebecca Chakrian — Portfólio",
+  "short_name": "Rebecca Chakrian",
+  "description": "Design gráfico, conteúdo digital e branding B2B.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E000E",
+  "theme_color": "#531926",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
